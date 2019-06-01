@@ -24,4 +24,17 @@ router.get('/:id', async (req, res) => {
    }
 });
 
+router.post('/:id/actions', async (req, res) => {
+    const { id } = req.params;
+    const action = { project_id: id, ...req.body };
+    try {
+        const newAction = db.addAction(action);
+        if (newAction) return res.status(200).json({ message: "New action created"});
+        res.status(400).json({ message: "Could not add action."});
+    } catch(err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+})
+
 module.exports = router;

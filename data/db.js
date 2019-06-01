@@ -15,7 +15,14 @@ const getProject = async (id) => {
     else return null;
 }
 
+const addAction = async action => {
+    const newActionId = await db('actions').insert(action);
+
+    return newActionId;
+}
+
 module.exports = {
     getProjects,
-    getProject
+    getProject,
+    addAction
 }
