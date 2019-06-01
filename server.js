@@ -7,4 +7,8 @@ server.use(express.json());
 server.use(morgan('dev'));
 server.use(helmet());
 
+const projectRoutes = require('./routes/projectRoutes');
+
+server.use('/api/projects', projectRoutes);
+
 module.exports = server;
