@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/RaneWallin/webdb-challenge#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "helmet": "^3.18.0",
     "knex": "^0.17.1",
     "mocha": "^6.1.4",
